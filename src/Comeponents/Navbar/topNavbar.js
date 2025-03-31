@@ -8,6 +8,7 @@ import './topNavbar.css';
 export default function MarvelNavbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null); // New state for selected item
 
   const handleToggle = () => {
     setIsNavOpen(!isNavOpen);
@@ -19,6 +20,11 @@ export default function MarvelNavbar() {
 
   const handleMouseLeave = () => {
     setHoveredItem(null);
+  };
+
+  const handleSelectItem = (item) => {
+    setSelectedItem(item); // Set the selected item
+    setIsNavOpen(false); // Close the navbar on selection
   };
 
   const menuItems = [
@@ -96,11 +102,9 @@ export default function MarvelNavbar() {
     }
   ];
 
-
-
   return (
     <>
-      <Navbar bg="black" variant="dark" expand="lg" className="p-0" style={{borderBottom:'1px solid'}}>
+      <Navbar bg="black" variant="dark" expand="lg" className="p-0" style={{ borderBottom: '1px solid' }}>
         <Container style={{ border: '1px solid  #393939', width: '80%' }} className="d-flex align-items-center justify-content-between">
           <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} className="d-lg-none">
             <IoMenu size={25} />
@@ -123,7 +127,7 @@ export default function MarvelNavbar() {
           </Navbar.Brand>
 
           <div className="text-white pt-2 d-none d-lg-block">
-            <Button variant="dark" className="top-name ms-2" style={{backgroundColor:'unset', border:'none'}}>MARVEL UNLIMITED <br /> <span style={{ fontSize: '10px' }}>SUBSCRIBE</span></Button>
+            <Button variant="dark" className="top-name ms-2" style={{ backgroundColor: 'unset', border: 'none' }}>MARVEL UNLIMITED <br /> <span style={{ fontSize: '10px' }}>SUBSCRIBE</span></Button>
             <IoSearchSharp size={25} />
           </div>
 
@@ -134,7 +138,7 @@ export default function MarvelNavbar() {
       </Navbar>
 
       <Navbar bg="black" variant="dark" expand="lg" className="p-0">
-        <Container className=" top-name p-1">
+        <Container className="top-name p-1">
           <Navbar.Collapse id="basic-navbar-nav" in={isNavOpen}>
             <Nav className="mx-auto">
               {menuItems.map((item) => (
@@ -144,11 +148,15 @@ export default function MarvelNavbar() {
                   onMouseEnter={() => handleMouseEnter(item.name)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <Nav.Link href={`#${item.name.toLowerCase()}`} className="text-white menuNav">
+                  <Nav.Link 
+                    href={`#${item.name.toLowerCase()}`} 
+                    className="text-white menuNav"
+                    onClick={() => handleSelectItem(item.name)} // Handle item selection
+                  >
                     {item.name}
                   </Nav.Link>
-                  {hoveredItem === item.name && (
-                    <div className="hover-content" >
+                  {hoveredItem === item.name && !selectedItem && ( // Show content only if no item is selected
+                    <div className="hover-content">
                       <div className="cards-container">
                         {item.content.map((subItem, index) => (
                           <div key={index} className="hover-card">
@@ -161,7 +169,6 @@ export default function MarvelNavbar() {
                       </div>
                     </div>
                   )}
-
                 </div>
               ))}
             </Nav>
