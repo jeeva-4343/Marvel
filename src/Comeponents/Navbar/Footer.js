@@ -35,10 +35,10 @@ const Footer = () => {
             <p>Phone: +123 456 7890</p>
             <p>Address: 123 Street, City, Coimbatore</p>
             <div className="social-icons">
-              <a href="#"><FaFacebook /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaLinkedin /></a>
+              <a href="#facebook"><FaFacebook /></a>
+              <a href="#twitter"><FaTwitter /></a>
+              <a href="#instagram"><FaInstagram /></a>
+              <a href="#linkdein"><FaLinkedin /></a>
             </div>
           </Col>
         </Row>
