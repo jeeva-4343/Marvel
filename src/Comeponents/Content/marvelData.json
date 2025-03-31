@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "image": "antman-2.jpg",
+        "title": "Iron Man",
+        "category": "Hero"
+    },
+    {
+        "id": 2,
+        "image": "spiderman.jpg",
+        "title": "Spider-Man",
+        "category": "Hero"
+    },
+    {
+        "id": 3,
+        "image": "female.jpg",
+        "title": "Thort",
+        "category": "Enemy"
+    },
+    {
+        "id": 4,
+        "image": "hulk1.jpg",
+        "title": "Hulk",
+        "category": "Hero"
+    },
+
+    {
+        "id": 5,
+        "image": "vision.png",
+        "title": "Ant-Man",
+        "category": "Hero"
+    },
+    {
+        "id": 6,
+        "image": "vision.jpg",
+        "title": "Vision",
+        "category": "Hero"
+    },
+    {
+        "id": 7,
+        "image": "blue.png",
+        "title": "Scarlet Witch",
+        "category": "Hero"
+    },
+    {
+        "id": 8,
+        "image": "antman-2.jpg",
+        "title": "Iron Man",
+        "category": "Hero"
+    },
+    {
+        "id": 9,
+        "image": "spiderman.jpg",
+        "title": "Spider-Man",
+        "category": "Hero"
+    },
+    {
+        "id": 10,
+        "image": "female.jpg",
+        "title": "Thortt",
+        "category": "Hero"
+    },
+    {
+        "id": 11,
+        "image": "hulk1.jpg",
+        "title": "Hulk",
+        "category": "Hero"
+    },
+
+    {
+        "id": 12,
+        "image": "vision.png",
+        "title": "Ant-Man",
+        "category": "Hero"
+    },
+    {
+        "id": 13,
+        "image": "vision.jpg",
+        "title": "Vision",
+        "category": "Hero"
+    }
+   
+]

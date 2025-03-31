@@ -1,0 +1,127 @@
+.menuNav {
+    position: relative;
+    padding: 10px 15px;
+}
+
+.menuNav:hover {
+    text-decoration: none;
+    border-bottom: 1px solid red;
+
+}
+
+.position-relative:hover .hover-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Hover Content (Dropdown) */
+.hover-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Ensures the hover effect works */
+.menuNav:hover .hover-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Underline effect on hover */
+.menuNav:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* Navbar Text */
+.top-name {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menuNav {
+        display: none;
+    }
+
+    .navbar-collapse.show .menuNav {
+        display: block;
+    }
+}
+
+@media (min-width: 770px) {
+    .brand-image {
+        margin-left: -200px;
+    }
+}
+
+/* --- Fix for Cards Layout --- */
+.cards-container {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure they stay in one row */
+    gap: 35px;
+    justify-content: center;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    padding: 10px;
+    max-width: 100%;
+}
+
+/* Card Styling */
+.hover-card {
+    background-color: #495057;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    width: 180px; /* Set a proper width */
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect on Cards */
+.hover-card:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 10px red;
+}
+
+/* Card Image */
+.hover-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Card Body */
+.card-body {
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Flex for Cards */
+.d-flex {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    gap: 10px;
+}
